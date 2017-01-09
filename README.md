@@ -16,6 +16,18 @@ is often faster than other available codes, even those entirely written in the
 low level FORTRAN and C/C++ languages.
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/kwant-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/kwant-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/kwant-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/kwant-feedstock)
+Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kwant/badges/version.svg)](https://anaconda.org/conda-forge/kwant)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kwant/badges/downloads.svg)](https://anaconda.org/conda-forge/kwant)
+
 Installing kwant
 ================
 
@@ -36,7 +48,6 @@ It is possible to list all of the versions of `kwant` available on your platform
 ```
 conda search kwant --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -72,18 +83,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/kwant-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/kwant-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/kwant-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/kwant-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kwant/badges/version.svg)](https://anaconda.org/conda-forge/kwant)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/kwant/badges/downloads.svg)](https://anaconda.org/conda-forge/kwant)
 
 
 Updating kwant-feedstock
