@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win or py2k]
-  number: 200
+  number: 201
   features:
     - blas_{{ variant }}
 
@@ -23,7 +23,7 @@ requirements:
     - toolchain
     - gcc  # [osx]
     - blas 1.1 {{ variant }}
-    - openblas 0.2.18|0.2.18.*
+    - openblas 0.2.19|0.2.19.*
     - mumps
     - numpy x.x
     - scipy
@@ -35,7 +35,7 @@ requirements:
   run:
     - python
     - blas 1.1 {{ variant }}
-    - openblas 0.2.18|0.2.18.*
+    - openblas 0.2.19|0.2.19.*
     - mumps
     - numpy x.x
     - matplotlib
