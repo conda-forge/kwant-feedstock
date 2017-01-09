@@ -30,7 +30,6 @@ requirements:
     - cython
     - nose
     - tinyarray
-    - libgfortran  # [linux]
 
   run:
     - python
@@ -43,7 +42,6 @@ requirements:
     - cython
     - nose
     - tinyarray
-    - libgfortran
 
 test:
   imports:
