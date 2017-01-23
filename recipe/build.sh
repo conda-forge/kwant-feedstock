@@ -6,10 +6,9 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 else
    cp $RECIPE_DIR/build_linux.conf build.conf
 fi
-sed -i -e "s:PREFIX:$PREFIX:g" build.conf
 
-export LIBRARY_PATH="${PREFIX}/lib"
-export LD_LIBRARY_PATH="${PREFIX}/lib"
+export LIBRARY_PATH="${CONDA_PREFIX}/lib"
+export LD_LIBRARY_PATH="${CONDA_PREFIX}/lib"
 
 $PYTHON setup.py build
 $PYTHON setup.py install
