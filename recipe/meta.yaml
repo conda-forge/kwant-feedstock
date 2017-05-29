@@ -12,10 +12,12 @@ source:
   sha256: 8a507df7de3513c4fe01e7e547b6c3eaa480d581391995b717f980aa9d36be34
 
 build:
-  skip: true  # [win or py2k]
+  skip: true  # [py2k]
   number: 201
   features:
     - blas_{{ variant }}
+  features:
+    - vc14  # [win]
 
 requirements:
   build:
@@ -23,26 +25,28 @@ requirements:
     - toolchain
     - cython
     - gcc  # [osx]
-    - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
-    - mumps
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mumps  # [not win]
     - numpy x.x
     - scipy
     - pytest
     - tinyarray
     - libgfortran  # [linux]
+    - vc 14  # [win]
 
   run:
     - python
-    - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
-    - mumps
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mumps  # [not win]
     - numpy x.x
     - matplotlib
     - scipy
     - pytest
     - tinyarray
-    - libgfortran
+    - libgfortran  # [not win]
+    - vc 14  # [win]
 
 test:
   imports:
