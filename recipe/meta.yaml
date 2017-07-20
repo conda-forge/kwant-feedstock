@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win or py2k]
-  number: 201
+  number: 202
   features:
     - blas_{{ variant }}
 
