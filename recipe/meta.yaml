@@ -43,6 +43,7 @@ requirements:
     - pytest
     - tinyarray
     - libgfortran
+    - sympy
 
 test:
   imports:
