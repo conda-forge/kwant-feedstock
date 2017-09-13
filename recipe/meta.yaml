@@ -7,15 +7,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
-  sha256: 8a507df7de3513c4fe01e7e547b6c3eaa480d581391995b717f980aa9d36be34
+  fn: kwant-1.4.0a0.dev20+gf4e8a3c.tar.gz
+  url: https://joseph.weston.site/uploads/kwant-1.4.0a0.dev20+gf4e8a3c.tar.gz
+  sha256: e589d0ef43225e1afdd8e34b2564f5f4a14f07440703dac037aac576b2cd3449
 
 build:
-  skip: true  # [win or py2k]
+  skip: true  # [py2k]
   number: 202
   features:
-    - blas_{{ variant }}
+    - blas_{{ variant }}  # [not win]
 
 requirements:
   build:
@@ -23,9 +23,9 @@ requirements:
     - toolchain
     - cython
     - gcc  # [osx]
-    - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
-    - mumps
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mumps  # [not win]
     - numpy 1.7.*  # [py27]
     - numpy 1.9.*  # [py35]
     - numpy 1.11.*  # [py36]
@@ -36,9 +36,9 @@ requirements:
 
   run:
     - python
-    - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
-    - mumps
+    - blas 1.1 {{ variant }}  # [not win]
+    - openblas 0.2.19|0.2.19.*  # [not win]
+    - mumps  # [not win]
     - numpy >=1.7  # [py27]
     - numpy >=1.9  # [py35]
     - numpy >=1.11  # [py36]
@@ -46,7 +46,7 @@ requirements:
     - scipy
     - pytest
     - tinyarray
-    - libgfortran
+    - libgfortran  # [not win]
     - sympy
 
 test:
