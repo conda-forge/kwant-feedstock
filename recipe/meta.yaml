@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win or py2k]
-  number: 201
+  number: 202
   features:
     - blas_{{ variant }}
 
@@ -24,7 +24,7 @@ requirements:
     - cython
     - gcc  # [osx]
     - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
+    - openblas 0.2.20|0.2.20.*
     - mumps
     - numpy 1.7.*  # [py27]
     - numpy 1.9.*  # [py35]
@@ -37,7 +37,7 @@ requirements:
   run:
     - python
     - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
+    - openblas 0.2.20|0.2.20.*
     - mumps
     - numpy >=1.7  # [py27]
     - numpy >=1.9  # [py35]
