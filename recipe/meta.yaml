@@ -1,5 +1,5 @@
 {% set name = "kwant" %}
-{% set version = "1.3.2" %}
+{% set version = "1.4.0a0" %}
 {% set variant = "openblas" %}
 
 package:
@@ -8,14 +8,18 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
-  sha256: 6e8ef9f714bdf95852bcaca9181133babfe5ece1ea4bac7fca4243e7a582bb7b
+  # url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
+  url: https://gitlab.kwant-project.org/kwant/kwant/repository/master/archive.tar.gz
+  sha256: cdc69fb9585b41b36541559b722e4de6b1e001611ef6f13d68fbb9eb407f43dd
 
 build:
-  skip: true  # [win or py2k]
+  skip: true  # [py2k]
   number: 201
   features:
     - blas_{{ variant }}
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
@@ -33,12 +37,14 @@ requirements:
     - pytest
     - tinyarray
     - libgfortran  # [linux]
-
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
   run:
     - python
     - blas 1.1 {{ variant }}
     - openblas 0.2.20|0.2.20.*
-    - mumps
+    - mumps  # [not win]
     - numpy >=1.7  # [py27]
     - numpy >=1.9  # [py35]
     - numpy >=1.11  # [py36]
@@ -48,6 +54,9 @@ requirements:
     - tinyarray
     - libgfortran
     - sympy
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
 test:
   imports:
