@@ -11,17 +11,21 @@ source:
   sha256: e43e9ed928ff3e7cbe8e7b9e4b671871a36c72dd1000548746098af89f102a67
   patches:
     - skip_tests.patch  # [win]
+    - win_compiler.patch  # [win]
 
 build:
   skip: true  # [py2k]
   skip: true  # [py==37]
-  number: 1002
+  number: 1003
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}  # [unix]
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('c') }}  # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}  # [unix]
+    - {{ compiler('m2w64_cxx') }}  # [win]
   host:
     - python
     - cython
@@ -29,18 +33,19 @@ requirements:
     - blas 1.0 mkl  # [win]
     - openblas  # [not win]
     - mkl  # [win]
-    - mumps-seq  # [not win]
+    - mumps-seq
     - numpy 1.11
     - scipy
     - pytest
     - tinyarray
+    - vc 14  # [win and py>=35]
   run:
     - python
     - blas 1.1 openblas  # [not win]
     - blas 1.0 mkl  # [win]
     - openblas  # [not win]
     - mkl  # [win]
-    - mumps-seq  # [not win]
+    - mumps-seq
     - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy

@@ -1,0 +1,26 @@
+diff --git a/setup.py b/setup.py
+index 5d4c3087..ff3386ff 100755
+--- a/setup.py
++++ b/setup.py
+@@ -26,6 +26,21 @@ from setuptools.command.sdist import sdist as sdist_orig
+ from setuptools.command.build_ext import build_ext as build_ext_orig
+ from setuptools.command.test import test as test_orig
+ 
++from distutils.cygwinccompiler import Mingw32CCompiler
++from distutils import ccompiler, cygwinccompiler
++
++class FakeCompiler(Mingw32CCompiler):
++    def __init__(self, verbose=0, dry_run=0, force=0):
++        Mingw32CCompiler.__init__(self, verbose, dry_run, force)
++        # Newer windows required newer things.
++        dlls = self.dll_libraries
++        if 'msvcr140' in dlls:
++            dlls[dlls.index('msvcr140')] = 'vcruntime140'
++
++
++cygwinccompiler.FakeCompiler = FakeCompiler
++ccompiler.compiler_class['win'] = ('cygwinccompiler', 'FakeCompiler', 'A fake compiler')
++
+ 
+ STATIC_VERSION_PATH = ('kwant', '_kwant_version.py')
+ 
