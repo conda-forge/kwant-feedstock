@@ -1,5 +1,5 @@
 {% set name = "kwant" %}
-{% set version = "1.4.0a1" %}
+{% set version = "1.4.0rc1" %}
 
 package:
   name: {{ name }}
@@ -14,7 +14,8 @@ source:
 
 build:
   skip: true  # [py2k]
-  number: 2
+  skip: true  # [py==37]
+  number: 1002
 
 requirements:
   build:
