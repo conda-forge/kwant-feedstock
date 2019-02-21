@@ -45,7 +45,7 @@ requirements:
     - scipy
     - pytest
     - tinyarray
-    - sympy <=1.1  # https://gitlab.kwant-project.org/kwant/kwant/issues/225
+    - sympy
     - vc 14  # [win and py>=35]
 
 test:
