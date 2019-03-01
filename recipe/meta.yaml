@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win or py2k]
-  number: 1
+  number: 2
   features:
     - blas_{{ variant }}
 
@@ -27,10 +27,8 @@ requirements:
     - cython
     - blas 1.1 {{ variant }}
     - openblas
-    - mumps
-    - numpy  # [py27]
-    - numpy  # [py35]
-    - numpy  # [py36]
+    - mumps-seq
+    - numpy 1.11
     - scipy
     - pytest
     - tinyarray
@@ -39,15 +37,13 @@ requirements:
     - python
     - blas 1.1 {{ variant }}
     - openblas
-    - mumps
-    - {{ pin_compatible('numpy') }}  # [py27]
-    - {{ pin_compatible('numpy') }}  # [py35]
-    - {{ pin_compatible('numpy') }}  # [py36]
+    - mumps-seq
+    - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy
     - pytest
     - tinyarray
-    - sympy
+    - sympy<=1.1
 
 test:
   imports:
