@@ -27,7 +27,7 @@ requirements:
     - cython
     - blas 1.1 {{ variant }}
     - openblas
-    - mumps-seq
+    - mumps
     - numpy 1.11
     - scipy
     - pytest
@@ -37,7 +37,7 @@ requirements:
     - python
     - blas 1.1 {{ variant }}
     - openblas
-    - mumps-seq
+    - mumps
     - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy
