@@ -33,7 +33,6 @@ requirements:
     - scipy
     - pytest
     - tinyarray
-    - qsymm
   run:
     - python
     - blas 1.1 openblas  # [not win]
@@ -47,6 +46,7 @@ requirements:
     - pytest
     - tinyarray
     - sympy
+    - qsymm    
     - vc 14  # [win and py>=35]
 
 test:
