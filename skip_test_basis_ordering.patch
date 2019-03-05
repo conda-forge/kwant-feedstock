@@ -1,0 +1,12 @@
+diff --git a/kwant/tests/test_qsymm.py b/kwant/tests/test_qsymm.py
+index 2a13b5e..68a500f 100644
+--- a/kwant/tests/test_qsymm.py
++++ b/kwant/tests/test_qsymm.py
+@@ -454,6 +454,7 @@ def test_find_cons_law():
+     mham = builder_to_model(syst)
+     assert not any([len(symm.apply(mham)) for symm in onsites])
+ 
++@pytest.mark.skip()
+ def test_basis_ordering():
+     symm_class = ['AI', 'D', 'AIII', 'BDI']
+     n = 2
