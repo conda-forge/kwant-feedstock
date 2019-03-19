@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [py2k]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,12 +23,10 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - libblas
+    - libcblas
     - python
     - cython
-    - blas 1.1 openblas  # [not win]
-    - blas 1.0 mkl  # [win]
-    - openblas  # [not win]
-    - mkl  # [win]
     - mumps-seq  # [not win]
     - numpy 1.11
     - scipy
@@ -36,10 +34,6 @@ requirements:
     - tinyarray
   run:
     - python
-    - blas 1.1 openblas  # [not win]
-    - blas 1.0 mkl  # [win]
-    - openblas  # [not win]
-    - mkl  # [win]
     - mumps-seq  # [not win]
     - {{ pin_compatible('numpy') }}
     - matplotlib
