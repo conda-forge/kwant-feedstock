@@ -38,7 +38,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy
-    - pytest
+    - pytest =4.6.4
     - tinyarray
     - sympy
     - qsymm    
