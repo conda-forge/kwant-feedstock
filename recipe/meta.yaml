@@ -28,7 +28,7 @@ requirements:
     - python
     - cython
     - mumps-seq  # [not win]
-    - numpy 1.11
+    - numpy
     - scipy
     - pytest =4.6.4
     - tinyarray
