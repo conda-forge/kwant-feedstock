@@ -30,7 +30,7 @@ requirements:
     - mumps-seq  # [not win]
     - numpy 1.11
     - scipy
-    - pytest
+    - pytest 4.6.4
     - tinyarray
   run:
     - python
