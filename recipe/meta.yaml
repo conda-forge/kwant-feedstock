@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [py2k]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -28,9 +28,9 @@ requirements:
     - python
     - cython
     - mumps-seq  # [not win]
-    - numpy 1.11
+    - numpy
     - scipy
-    - pytest
+    - pytest =4.6.4
     - tinyarray
   run:
     - python
@@ -38,7 +38,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy
-    - pytest
+    - pytest =4.6.4
     - tinyarray
     - sympy
     - qsymm    
