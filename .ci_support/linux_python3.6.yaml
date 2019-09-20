@@ -20,6 +20,8 @@ libblas:
 - 3.8 *netlib
 libcblas:
 - 3.8 *netlib
+mumps_seq:
+- '5.2'
 numpy:
 - '1.14'
 pin_run_as_build:
