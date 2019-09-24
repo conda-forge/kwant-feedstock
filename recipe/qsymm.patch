@@ -1,0 +1,38 @@
+From 16fd32994b9e0922e2725d9ed9e3724c47aa4892 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?T=C3=B3mas=20Rosdahl?= <torosdahl@gmail.com>
+From: https://gitlab.kwant-project.org/kwant/kwant/commit/16fd32994b9e0922e2725d9ed9e3724c47aa4892
+Date: Fri, 30 Aug 2019 15:53:54 +0200
+Subject: [PATCH] Minimally make kwant qsymm tests compatible with qsymm 1.2
+
+---
+ kwant/tests/test_qsymm.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/kwant/tests/test_qsymm.py b/kwant/tests/test_qsymm.py
+index b21803db..d3f028a3 100644
+--- a/kwant/tests/test_qsymm.py
++++ b/kwant/tests/test_qsymm.py
+@@ -317,9 +317,9 @@ def test_consistency_kwant():
+     c0, c1 = sympy.symbols('c0 c1', real=True)
+     kx = _commutative_momenta[0]
+ 
+-    Ham = Model({c0 * e**(-I*kx): T}, momenta=[0])
++    Ham = Model({c0 * e**(-I*kx): T}, momenta=['k_x'])
+     Ham += Ham.T().conj()
+-    Ham += Model({c1: H}, momenta=[0])
++    Ham += Model({c1: H}, momenta=['k_x'])
+ 
+     # Two superimposed atoms, same number of orbitals on each
+     norbs = OrderedDict([('A', orbs), ('B', orbs)])
+@@ -480,7 +480,8 @@ def test_find_cons_law():
+     onsites = [symm for symm in builder_symmetries if
+                isinstance(symm, qsymm.ContinuousGroupGenerator) and symm.R is None]
+     mham = builder_to_model(syst)
+-    assert not any([len(symm.apply(mham)) for symm in onsites])
++    assert all([symm.apply(mham).allclose(0, atol=1e-6) for symm in onsites])
++    
+ 
+ def test_basis_ordering():
+     symm_class = ['AI', 'D', 'AIII', 'BDI']
+-- 
+2.22.0
