@@ -12,10 +12,11 @@ source:
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
+    - qsymm.patch  # backport https://gitlab.kwant-project.org/kwant/kwant/merge_requests/318
 
 build:
   skip: true  # [py2k]
-  number: 1
+  number: 2
 
 requirements:
   build:
