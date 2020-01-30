@@ -7,8 +7,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
-  sha256: 8c0ccf341dfa74e1d69f1508968c4d4e9fb36f74685f101897df6a84ed7043df
+  url: https://antonakhmerov.org/misc/kwant-1.4.1.dev20+g40838439.tar.gz
+  sha256: e06cd7c2a0b97f7001d4a01a57b1fb1847587c0a29ef67365db47863eb9118b0
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
@@ -42,7 +42,7 @@ requirements:
     - pytest =4.6.4
     - tinyarray
     - sympy
-    - qsymm    
+    - qsymm
     - vc 14  # [win and py>=35]
 
 test:
