@@ -12,6 +12,7 @@ source:
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
+    - skip_test_kpm_kwant_op.patch  # [win]
 
 build:
   skip: true  # [py2k]
