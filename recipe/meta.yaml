@@ -1,5 +1,5 @@
 {% set name = "kwant" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name }}
@@ -7,16 +7,16 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
-  sha256: 8c0ccf341dfa74e1d69f1508968c4d4e9fb36f74685f101897df6a84ed7043df
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
+  sha256: 994b0a3848f78002ef8e3d60f36b9dfab719ee58c5189fc902a7acd0dec2cfbb
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
-    - qsymm.patch  # backport https://gitlab.kwant-project.org/kwant/kwant/merge_requests/318
+    - skip_test_kpm_kwant_op.patch  # [win]
 
 build:
   skip: true  # [py2k]
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -42,7 +42,7 @@ requirements:
     - pytest =4.6.4
     - tinyarray
     - sympy
-    - qsymm    
+    - qsymm
     - vc 14  # [win and py>=35]
 
 test:
@@ -63,7 +63,7 @@ test:
 
 about:
   home: http://kwant-project.org/
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_file: LICENSE.rst
   license_family: BSD
   summary: 'Package for numerical quantum transport calculations.'
