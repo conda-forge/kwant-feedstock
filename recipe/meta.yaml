@@ -7,7 +7,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://downloads.kwant-project.org/kwant/kwant-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
   sha256: 994b0a3848f78002ef8e3d60f36b9dfab719ee58c5189fc902a7acd0dec2cfbb
   patches:
     - skip_tests.patch  # [win]
