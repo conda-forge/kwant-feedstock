@@ -5,7 +5,7 @@ Home: http://kwant-project.org/
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Package for numerical quantum transport calculations.
 

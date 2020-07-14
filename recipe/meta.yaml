@@ -16,7 +16,7 @@ source:
 
 build:
   skip: true  # [py2k]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -39,7 +39,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - matplotlib
     - scipy
-    - pytest =4.6.4
+    - pytest
     - tinyarray
     - sympy
     - qsymm
