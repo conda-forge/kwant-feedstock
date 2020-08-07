@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - setuptools
     - libblas
     - libcblas
     - python
@@ -31,7 +32,7 @@ requirements:
     - mumps-seq  # [not win]
     - numpy
     - scipy
-    - pytest =4.6.4
+    - pytest
     - tinyarray
   run:
     - python
