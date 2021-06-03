@@ -38,7 +38,7 @@ requirements:
     - python
     - mumps-seq  # [not win]
     - {{ pin_compatible('numpy') }}
-    - matplotlib-base <=3.3  # Unpin in >1.4.2
+    - matplotlib-base <3.4  # Unpin in >1.4.2
     - scipy
     - pytest
     - tinyarray
