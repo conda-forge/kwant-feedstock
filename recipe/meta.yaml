@@ -42,7 +42,7 @@ requirements:
     - scipy
     - pytest
     - tinyarray
-    - sympy
+    - sympy <1.7  # Unpin in >1.4.2
     - qsymm
     - vc 14  # [win and py>=35]
 
