@@ -16,7 +16,7 @@ source:
 
 build:
   skip: true  # [py2k]
-  number: 3
+  number: 4
 
 requirements:
   build:
@@ -38,11 +38,11 @@ requirements:
     - python
     - mumps-seq  # [not win]
     - {{ pin_compatible('numpy') }}
-    - matplotlib-base
+    - matplotlib-base <3.4  # Unpin in >1.4.2
     - scipy
     - pytest
     - tinyarray
-    - sympy
+    - sympy <1.7  # Unpin in >1.4.2
     - qsymm
     - vc 14  # [win and py>=35]
 
