@@ -5,25 +5,49 @@
 jobs:
 - job: linux
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_numpy1.17python3.6.____cpython:
-        CONFIG: linux_64_numpy1.17python3.6.____cpython
+      linux_64_build_variantmpinumpy1.18python3.6.____cpython:
+        CONFIG: linux_64_build_variantmpinumpy1.18python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_numpy1.17python3.7.____cpython:
-        CONFIG: linux_64_numpy1.17python3.7.____cpython
+        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_hd8719727bc
+      linux_64_build_variantmpinumpy1.18python3.7.____cpython:
+        CONFIG: linux_64_build_variantmpinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_numpy1.17python3.8.____cpython:
-        CONFIG: linux_64_numpy1.17python3.8.____cpython
+        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_h3c4ef307c6
+      linux_64_build_variantmpinumpy1.18python3.8.____cpython:
+        CONFIG: linux_64_build_variantmpinumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_numpy1.19python3.9.____cpython:
-        CONFIG: linux_64_numpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_h6c6a14cb1b
+      linux_64_build_variantmpinumpy1.19python3.9.____cpython:
+        CONFIG: linux_64_build_variantmpinumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.19p_h0f73a5db32
+      linux_64_build_variantnompinumpy1.18python3.6.____cpython:
+        CONFIG: linux_64_build_variantnompinumpy1.18python3.6.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_hd83c6b99a3
+      linux_64_build_variantnompinumpy1.18python3.7.____cpython:
+        CONFIG: linux_64_build_variantnompinumpy1.18python3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_hab0bf570f3
+      linux_64_build_variantnompinumpy1.18python3.8.____cpython:
+        CONFIG: linux_64_build_variantnompinumpy1.18python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_h048ae62e49
+      linux_64_build_variantnompinumpy1.19python3.9.____cpython:
+        CONFIG: linux_64_build_variantnompinumpy1.19python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_h3ed9c3fd6d
   timeoutInMinutes: 360
 
   steps:
@@ -50,3 +74,15 @@ jobs:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
       FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
       STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
+  - script: |
+        artifact_name="conda_artifacts_$(build.BuildId)_$(SHORT_CONFIG_NAME)"
+        echo "##vso[task.setVariable variable=ARTIFACT_NAME]$artifact_name"
+        if [ -d build_artifacts ]; then
+          echo "##vso[task.setVariable variable=CONDA_BLD_DIR_EXISTS]true"
+        fi
+    displayName: Check for conda build artifacts
+    condition: succeededOrFailed()
+
+  - publish: build_artifacts/
+    artifact: $(ARTIFACT_NAME)
+    condition: eq(variables.CONDA_BLD_DIR_EXISTS, 'true')

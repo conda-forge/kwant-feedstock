@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+build_variant:
+- mpi
 c_compiler:
 - clang
 c_compiler_version:
@@ -25,13 +27,13 @@ macos_machine:
 mumps_seq:
 - '5.2'
 numpy:
-- '1.17'
+- '1.19'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
 target_platform:
 - osx-64
 zip_keys:
