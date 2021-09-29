@@ -1,6 +1,14 @@
 #!/bin/bash
 platform='unknown'
 unamestr=`uname`
+
+if [[ "$build_variant" == "mpi" ]]; then
+   # todo
+elif [[ "$build_variant" == "nompi" ]]; then
+   # todo
+fi
+
+
 if [[ "$unamestr" == 'Darwin' ]]; then
    cp $RECIPE_DIR/build_mac.conf build.conf
 else

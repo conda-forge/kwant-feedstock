@@ -1,5 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
+{% set build_num = 5 %}
 
 package:
   name: {{ name }}
@@ -14,9 +15,16 @@ source:
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
 
+{% if build_variant == "mpi" %}
+{% set build_num = build_num + 100 %}
+{% endif %}
+
 build:
   skip: true  # [py2k]
-  number: 4
+  number: {{ build_num }}
+  string: h{{ PKG_HASH }}_{{ build_num }}_{{ build_variant }}
+  track_features:
+    - kwant-mpi  # [build_variant == "mpi"]
 
 requirements:
   build:
@@ -29,11 +37,13 @@ requirements:
     - libcblas
     - python
     - cython
-    - mumps-seq  # [not win]
+    - mumps-seq  # [not win and build_variant == "nompi"]
+    - mumps  # [not win and build_variant == "mpi"]
     - numpy
     - scipy
     - pytest
     - tinyarray
+    - mpi4py  # [build_variant == "mpi"]
   run:
     - python
     - mumps-seq  # [not win]
