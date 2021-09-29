@@ -2,17 +2,10 @@
 platform='unknown'
 unamestr=`uname`
 
-if [[ "$build_variant" == "mpi" ]]; then
-   # todo
-elif [[ "$build_variant" == "nompi" ]]; then
-   # todo
-fi
-
-
 if [[ "$unamestr" == 'Darwin' ]]; then
-   cp $RECIPE_DIR/build_mac.conf build.conf
+   cp $RECIPE_DIR/build_mac_$build_variant.conf build.conf
 else
-   cp $RECIPE_DIR/build_linux.conf build.conf
+   cp $RECIPE_DIR/build_linux_$build_variant.conf build.conf
 fi
 
 sed -i -e "s:PREFIX:$PREFIX:g" build.conf
