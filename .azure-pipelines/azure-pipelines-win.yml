@@ -8,38 +8,22 @@ jobs:
     vmImage: vs2017-win2016
   strategy:
     matrix:
-      win_64_build_variantmpinumpy1.18python3.6.____cpython:
-        CONFIG: win_64_build_variantmpinumpy1.18python3.6.____cpython
+      win_64_numpy1.18python3.6.____cpython:
+        CONFIG: win_64_numpy1.18python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantmpinumpy1.18pyt_ha5d7ac7221
-      win_64_build_variantmpinumpy1.18python3.7.____cpython:
-        CONFIG: win_64_build_variantmpinumpy1.18python3.7.____cpython
+        SHORT_CONFIG_NAME: win_64_numpy1.18python3.6.____cpython
+      win_64_numpy1.18python3.7.____cpython:
+        CONFIG: win_64_numpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantmpinumpy1.18pyt_hda6a3125ec
-      win_64_build_variantmpinumpy1.18python3.8.____cpython:
-        CONFIG: win_64_build_variantmpinumpy1.18python3.8.____cpython
+        SHORT_CONFIG_NAME: win_64_numpy1.18python3.7.____cpython
+      win_64_numpy1.18python3.8.____cpython:
+        CONFIG: win_64_numpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantmpinumpy1.18pyt_h569da1de64
-      win_64_build_variantmpinumpy1.19python3.9.____cpython:
-        CONFIG: win_64_build_variantmpinumpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: win_64_numpy1.18python3.8.____cpython
+      win_64_numpy1.19python3.9.____cpython:
+        CONFIG: win_64_numpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantmpinumpy1.19pyt_h32b0fa17ea
-      win_64_build_variantnompinumpy1.18python3.6.____cpython:
-        CONFIG: win_64_build_variantnompinumpy1.18python3.6.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantnompinumpy1.18p_h9824d1df94
-      win_64_build_variantnompinumpy1.18python3.7.____cpython:
-        CONFIG: win_64_build_variantnompinumpy1.18python3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantnompinumpy1.18p_h97a50a0bf9
-      win_64_build_variantnompinumpy1.18python3.8.____cpython:
-        CONFIG: win_64_build_variantnompinumpy1.18python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantnompinumpy1.18p_hce280ce2ca
-      win_64_build_variantnompinumpy1.19python3.9.____cpython:
-        CONFIG: win_64_build_variantnompinumpy1.19python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: win_64_build_variantnompinumpy1.19p_h8db9907541
+        SHORT_CONFIG_NAME: win_64_numpy1.19python3.9.____cpython
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
