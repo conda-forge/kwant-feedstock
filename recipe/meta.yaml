@@ -14,7 +14,7 @@ source:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
-    - patch_mpi.patch  # [build_variant == "mpi"]
+    - init_mpi.patch  # [build_variant == "mpi"]
 
 {% if build_variant == "mpi" %}
 {% set build_num = build_num + 100 %}
