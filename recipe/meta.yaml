@@ -38,7 +38,8 @@ requirements:
     - libcblas
     - python
     - cython
-    - mumps  # [not win]
+    - mumps-seq  # [not win and build_variant == "nompi"]
+    - mumps-mpi  # [build_variant == "mpi"]
     - mpi4py  # [build_variant == "mpi"]
     - numpy
     - scipy
@@ -46,7 +47,8 @@ requirements:
     - tinyarray
   run:
     - python
-    - mumps  # [not win]
+    - mumps-seq  # [not win and build_variant == "nompi"]
+    - mumps-mpi  # [build_variant == "mpi"]
     - mpi4py  # [build_variant == "mpi"]
     - {{ pin_compatible('numpy') }}
     - matplotlib-base <3.4  # Unpin in >1.4.2
