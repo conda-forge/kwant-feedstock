@@ -1,6 +1,7 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
 {% set build_num = 5 %}
+{% set mpi = "mpich" %}
 
 package:
   name: {{ name }}
@@ -40,6 +41,7 @@ requirements:
     - cython
     - mumps-seq  # [not win and build_variant == "nompi"]
     - mumps-mpi  # [build_variant == "mpi"]
+    - {{ mpi }}   # [build_variant == "mpi"]
     - mpi4py  # [build_variant == "mpi"]
     - numpy
     - scipy
@@ -49,6 +51,7 @@ requirements:
     - python
     - mumps-seq  # [not win and build_variant == "nompi"]
     - mumps-mpi  # [build_variant == "mpi"]
+    - {{ mpi }}  # [build_variant == "mpi"]
     - mpi4py  # [build_variant == "mpi"]
     - {{ pin_compatible('numpy') }}
     - matplotlib-base <3.4  # Unpin in >1.4.2
