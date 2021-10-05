@@ -17,8 +17,8 @@ source:
     - skip_test_kpm_kwant_op.patch  # [win]
     - init_mpi.patch  # [build_variant == "mpi"]
 
-# We set the build number of the `mpi` variant higher than
-# the `nompi` variant, such that the `nompi` will be preferred.
+# We set the build number of the `nompi` variant higher than
+# the `mpi` variant, such that the `nompi` will be preferred.
 {% if build_variant == "nompi" %}
 {% set build_num = build_num + 100 %}
 {% endif %}
