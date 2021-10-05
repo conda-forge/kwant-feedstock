@@ -1,7 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
-{% set build = 5 %}
-{% set mpi = "mpich" %}
+{% set build = 6 %}
 
 package:
   name: {{ name }}
@@ -36,7 +35,7 @@ build:
   {% else %}
   {% set mpi_prefix = "nompi" %}
   {% endif %}
-  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
+  string: "{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}"
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*  # [mpi != "nompi"]
 

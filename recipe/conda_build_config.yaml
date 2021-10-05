@@ -1,7 +1,14 @@
+# Ideally we would generate an OpenMPI build also, but the
+# build fails in that case (see #92).
 pin_run_as_build:
-    mpich:
-        max_pin: x.x
+  mpich:
+    min_pin: x.x.x
+    max_pin: x.x
+#   openmpi:
+#     min_pin: x.x.x
+#     max_pin: x.x
+
 mpi:
   - mpich  # [not win]
-  - openmpi  # [not win]
+  # - openmpi  # [not win]
   - nompi
