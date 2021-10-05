@@ -38,21 +38,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
         SHORT_CONFIG_NAME: linux_64_mpinompinumpy1.19python3.9.____cpython
-      linux_64_mpiopenmpinumpy1.18python3.7.____cpython:
-        CONFIG: linux_64_mpiopenmpinumpy1.18python3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.18python3_h76877f8d75
-      linux_64_mpiopenmpinumpy1.18python3.8.____cpython:
-        CONFIG: linux_64_mpiopenmpinumpy1.18python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.18python3_hd84dc8f8c1
-      linux_64_mpiopenmpinumpy1.19python3.9.____cpython:
-        CONFIG: linux_64_mpiopenmpinumpy1.19python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.19python3_h5608eac6cc
   timeoutInMinutes: 360
 
   steps:
