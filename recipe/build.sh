@@ -2,6 +2,10 @@
 platform='unknown'
 unamestr=`uname`
 
+if [[ "$mpi" != 'nompi' ]]; then
+   build_variant="mpi"
+fi
+
 if [[ "$unamestr" == 'Darwin' ]]; then
    cp $RECIPE_DIR/build_mac_$build_variant.conf build.conf
 else
