@@ -4,6 +4,8 @@ unamestr=`uname`
 
 if [[ "$mpi" != 'nompi' ]]; then
    build_variant="mpi"
+else
+   build_variant="nompi"
 fi
 
 if [[ "$unamestr" == 'Darwin' ]]; then
