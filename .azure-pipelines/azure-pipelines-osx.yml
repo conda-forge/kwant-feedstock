@@ -8,38 +8,42 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_build_variantmpinumpy1.18python3.6.____cpython:
-        CONFIG: osx_64_build_variantmpinumpy1.18python3.6.____cpython
+      osx_64_mpimpichnumpy1.18python3.7.____cpython:
+        CONFIG: osx_64_mpimpichnumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantmpinumpy1.18pyt_h3e8fd861a1
-      osx_64_build_variantmpinumpy1.18python3.7.____cpython:
-        CONFIG: osx_64_build_variantmpinumpy1.18python3.7.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpimpichnumpy1.18python3.7.____cpython
+      osx_64_mpimpichnumpy1.18python3.8.____cpython:
+        CONFIG: osx_64_mpimpichnumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantmpinumpy1.18pyt_h495bfffa62
-      osx_64_build_variantmpinumpy1.18python3.8.____cpython:
-        CONFIG: osx_64_build_variantmpinumpy1.18python3.8.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpimpichnumpy1.18python3.8.____cpython
+      osx_64_mpimpichnumpy1.19python3.9.____cpython:
+        CONFIG: osx_64_mpimpichnumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantmpinumpy1.18pyt_h7652fa4620
-      osx_64_build_variantmpinumpy1.19python3.9.____cpython:
-        CONFIG: osx_64_build_variantmpinumpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpimpichnumpy1.19python3.9.____cpython
+      osx_64_mpinompinumpy1.18python3.7.____cpython:
+        CONFIG: osx_64_mpinompinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantmpinumpy1.19pyt_h2074d7167d
-      osx_64_build_variantnompinumpy1.18python3.6.____cpython:
-        CONFIG: osx_64_build_variantnompinumpy1.18python3.6.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpinompinumpy1.18python3.7.____cpython
+      osx_64_mpinompinumpy1.18python3.8.____cpython:
+        CONFIG: osx_64_mpinompinumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantnompinumpy1.18p_hbe7f82b6fa
-      osx_64_build_variantnompinumpy1.18python3.7.____cpython:
-        CONFIG: osx_64_build_variantnompinumpy1.18python3.7.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpinompinumpy1.18python3.8.____cpython
+      osx_64_mpinompinumpy1.19python3.9.____cpython:
+        CONFIG: osx_64_mpinompinumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantnompinumpy1.18p_h7132fdcb16
-      osx_64_build_variantnompinumpy1.18python3.8.____cpython:
-        CONFIG: osx_64_build_variantnompinumpy1.18python3.8.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpinompinumpy1.19python3.9.____cpython
+      osx_64_mpiopenmpinumpy1.18python3.7.____cpython:
+        CONFIG: osx_64_mpiopenmpinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantnompinumpy1.18p_hfc86147ab6
-      osx_64_build_variantnompinumpy1.19python3.9.____cpython:
-        CONFIG: osx_64_build_variantnompinumpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: osx_64_mpiopenmpinumpy1.18python3.7.____cpython
+      osx_64_mpiopenmpinumpy1.18python3.8.____cpython:
+        CONFIG: osx_64_mpiopenmpinumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG_NAME: osx_64_build_variantnompinumpy1.19p_hdedd39ded7
+        SHORT_CONFIG_NAME: osx_64_mpiopenmpinumpy1.18python3.8.____cpython
+      osx_64_mpiopenmpinumpy1.19python3.9.____cpython:
+        CONFIG: osx_64_mpiopenmpinumpy1.19python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG_NAME: osx_64_mpiopenmpinumpy1.19python3.9.____cpython
   timeoutInMinutes: 360
 
   steps:

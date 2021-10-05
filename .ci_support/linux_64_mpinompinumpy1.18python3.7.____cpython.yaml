@@ -1,5 +1,3 @@
-build_variant:
-- mpi
 c_compiler:
 - gcc
 c_compiler_version:
@@ -24,6 +22,12 @@ libblas:
 - 3.8 *netlib
 libcblas:
 - 3.8 *netlib
+mpi:
+- nompi
+mumps_mpi:
+- '5.2'
+mumps_seq:
+- '5.2'
 numpy:
 - '1.18'
 pin_run_as_build:

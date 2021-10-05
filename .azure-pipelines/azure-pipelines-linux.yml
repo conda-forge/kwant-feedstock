@@ -8,46 +8,51 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_build_variantmpinumpy1.18python3.6.____cpython:
-        CONFIG: linux_64_build_variantmpinumpy1.18python3.6.____cpython
+      linux_64_mpimpichnumpy1.18python3.7.____cpython:
+        CONFIG: linux_64_mpimpichnumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_hd8719727bc
-      linux_64_build_variantmpinumpy1.18python3.7.____cpython:
-        CONFIG: linux_64_build_variantmpinumpy1.18python3.7.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpimpichnumpy1.18python3.7.____cpython
+      linux_64_mpimpichnumpy1.18python3.8.____cpython:
+        CONFIG: linux_64_mpimpichnumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_h3c4ef307c6
-      linux_64_build_variantmpinumpy1.18python3.8.____cpython:
-        CONFIG: linux_64_build_variantmpinumpy1.18python3.8.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpimpichnumpy1.18python3.8.____cpython
+      linux_64_mpimpichnumpy1.19python3.9.____cpython:
+        CONFIG: linux_64_mpimpichnumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.18p_h6c6a14cb1b
-      linux_64_build_variantmpinumpy1.19python3.9.____cpython:
-        CONFIG: linux_64_build_variantmpinumpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpimpichnumpy1.19python3.9.____cpython
+      linux_64_mpinompinumpy1.18python3.7.____cpython:
+        CONFIG: linux_64_mpinompinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantmpinumpy1.19p_h0f73a5db32
-      linux_64_build_variantnompinumpy1.18python3.6.____cpython:
-        CONFIG: linux_64_build_variantnompinumpy1.18python3.6.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpinompinumpy1.18python3.7.____cpython
+      linux_64_mpinompinumpy1.18python3.8.____cpython:
+        CONFIG: linux_64_mpinompinumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_hd83c6b99a3
-      linux_64_build_variantnompinumpy1.18python3.7.____cpython:
-        CONFIG: linux_64_build_variantnompinumpy1.18python3.7.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpinompinumpy1.18python3.8.____cpython
+      linux_64_mpinompinumpy1.19python3.9.____cpython:
+        CONFIG: linux_64_mpinompinumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_hab0bf570f3
-      linux_64_build_variantnompinumpy1.18python3.8.____cpython:
-        CONFIG: linux_64_build_variantnompinumpy1.18python3.8.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpinompinumpy1.19python3.9.____cpython
+      linux_64_mpiopenmpinumpy1.18python3.7.____cpython:
+        CONFIG: linux_64_mpiopenmpinumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_h048ae62e49
-      linux_64_build_variantnompinumpy1.19python3.9.____cpython:
-        CONFIG: linux_64_build_variantnompinumpy1.19python3.9.____cpython
+        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.18python3_h76877f8d75
+      linux_64_mpiopenmpinumpy1.18python3.8.____cpython:
+        CONFIG: linux_64_mpiopenmpinumpy1.18python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-        SHORT_CONFIG_NAME: linux_64_build_variantnompinumpy1.1_h3ed9c3fd6d
+        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.18python3_hd84dc8f8c1
+      linux_64_mpiopenmpinumpy1.19python3.9.____cpython:
+        CONFIG: linux_64_mpiopenmpinumpy1.19python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        SHORT_CONFIG_NAME: linux_64_mpiopenmpinumpy1.19python3_h5608eac6cc
   timeoutInMinutes: 360
 
   steps:
