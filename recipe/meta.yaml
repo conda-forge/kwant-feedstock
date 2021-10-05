@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
-{% set build_num = 5 %}
+{% set build = 5 %}
 {% set mpi = "mpich" %}
 
 package:
@@ -15,20 +15,29 @@ source:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
-    - init_mpi.patch  # [build_variant == "mpi"]
+    - init_mpi.patch  # [mpi != "nompi"]
 
 # We set the build number of the `nompi` variant higher than
 # the `mpi` variant, such that the `nompi` will be preferred.
-{% if build_variant == "nompi" %}
-{% set build_num = build_num + 100 %}
+{% if mpi == "nompi" %}
+{% set build = build + 100 %}
 {% endif %}
 
 build:
   skip: true  # [py2k]
-  number: {{ build_num }}
-  string: h{{ PKG_HASH }}_{{ build_num }}_{{ build_variant }}
-  track_features:
-    - kwant-mpi  # [build_variant == "mpi"]
+  number: {{ build }}
+  # add build string so packages can depend on
+  # mpi or nompi variants explicitly:
+  # `pkg * mpi_mpich_*` for mpich
+  # `pkg * mpi_*` for any mpi
+  # `pkg * nompi_*` for no mpi
+  {% set mpi_prefix = "mpi_" + mpi %}
+  {% else %}
+  {% set mpi_prefix = "nompi" %}
+  {% endif %}
+  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
+  run_exports:
+    - {{ name }} * {{ mpi_prefix }}_*  # [mpi != "nompi"]
 
 requirements:
   build:
@@ -41,20 +50,20 @@ requirements:
     - libcblas
     - python
     - cython
-    - mumps-seq  # [not win and build_variant == "nompi"]
-    - mumps-mpi  # [build_variant == "mpi"]
-    - {{ mpi }}   # [build_variant == "mpi"]
-    - mpi4py  # [build_variant == "mpi"]
+    - mumps-seq  # [not win and mpi == "nompi"]
+    - mumps-mpi  # [mpi != "nompi"]
+    - {{ mpi }}   # [mpi != "nompi"]
+    - mpi4py  # [mpi != "nompi"]
     - numpy
     - scipy
     - pytest
     - tinyarray
   run:
     - python
-    - mumps-seq  # [not win and build_variant == "nompi"]
-    - mumps-mpi  # [build_variant == "mpi"]
-    - {{ mpi }}  # [build_variant == "mpi"]
-    - mpi4py  # [build_variant == "mpi"]
+    - mumps-seq  # [not win and mpi == "nompi"]
+    - mumps-mpi  # [mpi != "nompi"]
+    - {{ mpi }}  # [mpi != "nompi"]
+    - mpi4py  # [mpi != "nompi"]
     - {{ pin_compatible('numpy') }}
     - matplotlib-base <3.4  # Unpin in >1.4.2
     - scipy

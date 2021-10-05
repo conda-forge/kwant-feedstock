@@ -1,6 +1,7 @@
-build_variant:
-  - "mpi"  # [not win]
-  - "nompi"
 pin_run_as_build:
     mpich:
         max_pin: x.x
+mpi:
+  - mpich  # [not win]
+  - openmpi  # [not win]
+  - nompi
