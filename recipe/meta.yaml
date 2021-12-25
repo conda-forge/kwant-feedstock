@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
-{% set build = 6 %}
+{% set build = 7 %}
 
 package:
   name: {{ name }}
@@ -86,8 +86,6 @@ test:
     - kwant.solvers.tests
     - kwant.tests
   commands:
-    - conda inspect linkages -p $PREFIX kwant  # [not win]
-    - conda inspect objects -p $PREFIX kwant  # [osx]
 
 about:
   home: http://kwant-project.org/
