@@ -16,9 +16,16 @@ libcblas:
 - 3.8 *netlib
 mpi:
 - nompi
+mpich:
+- '4'
 numpy:
-- '1.18'
+- '1.19'
+openmpi:
+- '4'
 pin_run_as_build:
+  mpich:
+    min_pin: x.x.x
+    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x

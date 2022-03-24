@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '12'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '12'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -24,13 +24,20 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 mpi:
 - mpich
+mpich:
+- '4'
 mumps_mpi:
 - '5.2'
 mumps_seq:
 - '5.2'
 numpy:
-- '1.18'
+- '1.19'
+openmpi:
+- '4'
 pin_run_as_build:
+  mpich:
+    min_pin: x.x.x
+    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
