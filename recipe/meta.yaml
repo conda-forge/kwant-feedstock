@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.2" %}
-{% set build = 6 %}
+{% set build = 7 %}
 
 package:
   name: {{ name }}
@@ -15,6 +15,7 @@ source:
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
     - init_mpi.patch  # [mpi != "nompi"]
+    - scipy-linsolve.patch
 
 # We set the build number of the `nompi` variant higher than
 # the `mpi` variant, such that the `nompi` will be preferred.

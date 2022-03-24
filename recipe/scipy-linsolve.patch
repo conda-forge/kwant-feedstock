@@ -1,0 +1,13 @@
+ * [new branch]      patch-7                  -> origin/patch-7
+diff --git a/kwant/solvers/sparse.py b/kwant/solvers/sparse.py
+index 3f1a673..c5fe2bc 100644
+--- a/kwant/solvers/sparse.py
++++ b/kwant/solvers/sparse.py
+@@ -13,7 +13,7 @@ import scipy.sparse as sp
+ from . import common
+
+ # Note: previous code would have failed if UMFPACK was provided by scikit
+-import scipy.sparse.linalg.dsolve.linsolve as linsolve
++from scipy.sparse.linalg.dsolve import linsolve
+
+ uses_umfpack = linsolve.useUmfpack
