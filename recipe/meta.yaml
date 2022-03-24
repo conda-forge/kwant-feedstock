@@ -59,7 +59,7 @@ requirements:
     - {{ mpi }}   # [mpi != "nompi"]
     - mpi4py  # [mpi != "nompi"]
     - numpy
-    - scipy
+    - scipy <1.8. # see https://gitlab.kwant-project.org/kwant/kwant/-/merge_requests/401/diffs
     - pytest
     - tinyarray
   run:
