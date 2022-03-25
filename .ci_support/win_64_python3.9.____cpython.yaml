@@ -23,9 +23,6 @@ numpy:
 openmpi:
 - '4'
 pin_run_as_build:
-  mpich:
-    min_pin: x.x.x
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x

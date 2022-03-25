@@ -32,6 +32,22 @@ jobs:
         CONFIG: osx_64_mpinompipython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         SHORT_CONFIG: osx_64_mpinompipython3.9.____cpython
+      osx_arm64_mpimpichpython3.8.____cpython:
+        CONFIG: osx_arm64_mpimpichpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_mpimpichpython3.8.____cpython
+      osx_arm64_mpimpichpython3.9.____cpython:
+        CONFIG: osx_arm64_mpimpichpython3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_mpimpichpython3.9.____cpython
+      osx_arm64_mpinompipython3.8.____cpython:
+        CONFIG: osx_arm64_mpinompipython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_mpinompipython3.8.____cpython
+      osx_arm64_mpinompipython3.9.____cpython:
+        CONFIG: osx_arm64_mpinompipython3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_mpinompipython3.9.____cpython
   timeoutInMinutes: 360
 
   steps:
