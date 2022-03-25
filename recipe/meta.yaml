@@ -90,7 +90,6 @@ test:
     - kwant.solvers
     - kwant.solvers.tests
     - kwant.tests
-  commands:
 
 about:
   home: http://kwant-project.org/
