@@ -43,6 +43,10 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -88,8 +92,6 @@ test:
     - kwant.solvers.tests
     - kwant.tests
   commands:
-    - conda inspect linkages -p $PREFIX kwant  # [not win]
-    - conda inspect objects -p $PREFIX kwant  # [osx]
 
 about:
   home: http://kwant-project.org/
