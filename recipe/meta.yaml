@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
-{% set version = "1.4.2" %}
-{% set build = 7 %}
+{% set version = "1.4.3" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
-  sha256: 994b0a3848f78002ef8e3d60f36b9dfab719ee58c5189fc902a7acd0dec2cfbb
+  sha256: 3219d2512fcee55fa225328360574897e9f6049cfbae921bda0640a3a79dbd9f
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
@@ -37,7 +37,7 @@ build:
   {% else %}
   {% set mpi_prefix = "nompi" %}
   {% endif %}
-  string: "{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}"
+  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*  # [mpi != "nompi"]
 
