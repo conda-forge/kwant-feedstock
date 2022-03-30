@@ -15,8 +15,6 @@ source:
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
     - init_mpi.patch  # [mpi != "nompi"]
-    # Remove patch below when https://gitlab.kwant-project.org/kwant/kwant/-/merge_requests/401 is merged
-    - scipy-linsolve.patch
 
 # We set the build number of the `nompi` variant higher than
 # the `mpi` variant, such that the `nompi` will be preferred.
@@ -71,11 +69,11 @@ requirements:
     - {{ mpi }}  # [mpi != "nompi"]
     - mpi4py  # [mpi != "nompi"]
     - {{ pin_compatible('numpy') }}
-    - matplotlib-base <3.4  # Unpin in >1.4.2
+    - matplotlib-base
     - scipy
     - pytest
     - tinyarray
-    - sympy <1.7  # Unpin in >1.4.2
+    - sympy
     - qsymm
     - vc 14  # [win and py>=35]
 
