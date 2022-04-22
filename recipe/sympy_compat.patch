@@ -1,0 +1,80 @@
+From 53cdc175f2730e79bf18482ce74f436905b1375d Mon Sep 17 00:00:00 2001
+From: Anton Akhmerov <anton.akhmerov@gmail.com>
+Date: Fri, 22 Apr 2022 19:11:10 +0200
+Subject: [PATCH] stop mixing Symbol and Function in tests
+
+Sympy used to implicitly cast Symbol to Function but stopped in v1.10.
+Our tests (but not code) relied on the casting behavior, and here
+we fix this ambiguity.
+---
+ kwant/continuum/tests/test_discretizer.py | 21 ++++++++++++++-------
+ 1 file changed, 14 insertions(+), 7 deletions(-)
+
+diff --git a/kwant/continuum/tests/test_discretizer.py b/kwant/continuum/tests/test_discretizer.py
+index b8953e6b..1fb49417 100644
+--- a/kwant/continuum/tests/test_discretizer.py
++++ b/kwant/continuum/tests/test_discretizer.py
+@@ -50,10 +50,13 @@ a = sympy.symbols('a')
+ 
+ wf = _wf
+ Psi = wf(x, y, z)
+-A, B = sympy.symbols('A B', commutative=False)
++A, B, C = sympy.symbols('A B C', commutative=False)
+ fA, fB = sympy.symbols('A B', cls=sympy.Function)
+ 
+-ns = {'A': A, 'B': B, 'a_x': ax, 'a_y': ay, 'az': az, 'x': x, 'y': y, 'z': z}
++ns = {
++    'A': A, 'B': B, 'C': C, 'a_x': ax, 'a_y': ay,
++    'az': az, 'x': x, 'y': y, 'z': z
++}
+ 
+ 
+ @pytest.mark.parametrize('commutative', [True, False])
+@@ -128,7 +131,7 @@ def test_simple_derivations(commutative):
+                                    (0, 0): 2/ax**2},
+         kx * fA(x)               : {(0,): 0, (1,): -I*fA(ax + x)/(2*ax)},
+         ky * fA(x)               : {(1,): -I*fA(x)/(2*ay), (0,): 0},
+-        kx * fA(x) * B           : {(0,): 0, (1,): -I*fA(ax + x)*B/(2*ax)},
++        kx * fA(x) * C           : {(0,): 0, (1,): -I*fA(ax + x)*C/(2*ax)},
+         5 * kx                  : {(0,): 0, (1,): -5*I/(2*ax)},
+         kx * (fA(x) + fB(x))      : {(0,): 0,
+                                    (1,): -I*fA(ax + x)/(2*ax) - I*fB(ax + x)/(2*ax)},
+@@ -142,7 +145,7 @@ def test_simple_derivations(commutative):
+         assert got == out
+ 
+     for inp, out in test.items():
+-        got, _ = discretize_symbolic(str(inp), locals=ns)
++        got, _ = discretize_symbolic(str(inp), locals={**ns, 'A': fA, 'B': fB})
+         assert got == out
+ 
+ 
+@@ -177,7 +180,7 @@ def test_simple_derivations_matrix():
+                                    (0, 0): 2/ax**2},
+         kx * fA(x)               : {(0,): 0, (1,): -I*fA(ax + x)/(2*ax)},
+         ky * fA(x)               : {(1,): -I*fA(x)/(2*ay), (0,): 0},
+-        kx * fA(x) * B           : {(0,): 0, (1,): -I*fA(ax + x)*B/(2*ax)},
++        kx * fA(x) * C           : {(0,): 0, (1,): -I*fA(ax + x)*C/(2*ax)},
+         5 * kx                  : {(0,): 0, (1,): -5*I/(2*ax)},
+         kx * (fA(x) + fB(x))      : {(0,): 0,
+                                    (1,): -I*fA(ax + x)/(2*ax) - I*fB(ax + x)/(2*ax)},
+@@ -195,11 +198,15 @@ def test_simple_derivations_matrix():
+         assert got == out
+ 
+     for inp, out in new_test:
+-        got, _ = discretize_symbolic(str(inp), locals=ns)
++        got, _ = discretize_symbolic(
++            str(inp), locals={**ns, "A": fA, "B": fB}
++        )
+         assert got == out
+ 
+     for inp, out in new_test:
+-        got, _ = discretize_symbolic(str(inp).replace('Matrix', ''), locals=ns)
++        got, _ = discretize_symbolic(
++            str(inp).replace('Matrix', ''), locals={**ns, "A": fA, "B": fB}
++        )
+         assert got == out
+ 
+ 
+-- 
+2.35.3
+
