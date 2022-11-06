@@ -1,0 +1,30 @@
+From cebd110217661a1517a26121ee8fddacad34be91 Mon Sep 17 00:00:00 2001
+From: Anton Akhmerov <anton.akhmerov@gmail.com>
+Date: Sun, 6 Nov 2022 11:26:55 +0100
+Subject: [PATCH] ensure compatibility with matplotlib>3.6
+
+---
+ kwant/_plotter.py | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/kwant/_plotter.py b/kwant/_plotter.py
+index 728851b0..a19fdec7 100644
+--- a/kwant/_plotter.py
++++ b/kwant/_plotter.py
+@@ -157,7 +157,12 @@ if mpl_available:
+                 self.linewidths_orig = nparray_if_array(linewidths)
+ 
+             def do_3d_projection(self, renderer=None):
+-                super().do_3d_projection(renderer)
++                # TODO: remove the try once we depend on matplotlib >= 3.6.0
++                try:
++                    super().do_3d_projection(renderer)
++                except TypeError:
++                    super().do_3d_projection()
++
+                 # The whole 3D ordering is flawed in mplot3d when several
+                 # collections are added. We just use normal zorder. Note the
+                 # "-" due to the different logic in the 3d plotting, we still
+-- 
+2.38.1
+

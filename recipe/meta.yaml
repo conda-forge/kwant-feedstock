@@ -16,6 +16,7 @@ source:
     - skip_test_kpm_kwant_op.patch  # [win]
     - init_mpi.patch  # [mpi != "nompi"]
     - sympy_compat.patch
+    - mpl-3.6_compat.patch
 
 # We set the build number of the `nompi` variant higher than
 # the `mpi` variant, such that the `nompi` will be preferred.
