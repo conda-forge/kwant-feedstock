@@ -1,0 +1,44 @@
+From 012097de9bd0e84bd234883398f3ff2da99b26b5 Mon Sep 17 00:00:00 2001
+From: Anton Akhmerov <anton.akhmerov@gmail.com>
+Date: Sat, 17 Dec 2022 00:09:58 +0100
+Subject: [PATCH] disable testing of an unused function
+
+---
+ kwant/linalg/tests/test_linalg.py | 21 ---------------------
+ 1 file changed, 21 deletions(-)
+
+diff --git a/kwant/linalg/tests/test_linalg.py b/kwant/linalg/tests/test_linalg.py
+index c092f010..3419d136 100644
+--- a/kwant/linalg/tests/test_linalg.py
++++ b/kwant/linalg/tests/test_linalg.py
+@@ -13,27 +13,6 @@ from kwant.linalg import (
+ import numpy as np
+ from ._test_utils import _Random, assert_array_almost_equal
+ 
+-def test_gen_eig():
+-    def _test_gen_eig(dtype):
+-        rand = _Random()
+-        a = rand.randmat(4, 4, dtype)
+-        b = rand.randmat(4, 4, dtype)
+-
+-        (alpha, beta, vl, vr) = gen_eig(a, b, True, True)
+-
+-        assert_array_almost_equal(dtype, np.dot(np.dot(a, vr), beta),
+-                                  np.dot(np.dot(b, vr), alpha))
+-        assert_array_almost_equal(dtype,
+-                                  np.dot(beta, np.dot(np.conj(vl.T), a)),
+-                                  np.dot(alpha, np.dot(np.conj(vl.T), b)))
+-
+-    _test_gen_eig(np.float32)
+-    _test_gen_eig(np.float64)
+-    _test_gen_eig(np.complex64)
+-    _test_gen_eig(np.complex128)
+-    #int should be propagated to float64
+-    _test_gen_eig(np.int32)
+-
+ def test_lu():
+     def _test_lu(dtype):
+         rand = _Random()
+-- 
+2.39.0
+
