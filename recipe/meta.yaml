@@ -14,7 +14,7 @@ source:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
-    - skip_test_gen_eig.patch # [osx]
+    - skip_test_gen_eig.patch  # [osx]
     - init_mpi.patch  # [mpi != "nompi"]
     - sympy_compat.patch
     - mpl-3.6_compat.patch
