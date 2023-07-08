@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
-{% set version = "1.4.3" %}
-{% set build = 2 %}
+{% set version = "1.4.4" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
@@ -9,15 +9,13 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
-  sha256: 3219d2512fcee55fa225328360574897e9f6049cfbae921bda0640a3a79dbd9f
+  sha256: 6cf76cc09166714a46644a8127b82b386b1a8e76b8c836c95281f6f8be72ac30
   patches:
     - skip_tests.patch  # [win]
     - skip_test_basis_ordering.patch
     - skip_test_kpm_kwant_op.patch  # [win]
     - schur-test.patch  # [osx]
     - init_mpi.patch  # [mpi != "nompi"]
-    - sympy_compat.patch
-    - mpl-3.6_compat.patch
 
 # We set the build number of the `nompi` variant higher than
 # the `mpi` variant, such that the `nompi` will be preferred.

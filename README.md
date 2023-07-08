@@ -1,11 +1,11 @@
-About kwant
-===========
+About kwant-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kwant-feedstock/blob/main/LICENSE.txt)
 
 Home: http://kwant-project.org/
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kwant-feedstock/blob/main/LICENSE.txt)
 
 Summary: Package for numerical quantum transport calculations.
 
@@ -38,24 +38,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_mpimpichnumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichnumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_mpimpichnumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichnumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_mpimpichnumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichnumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpimpichnumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichnumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpimpichnumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichnumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -66,24 +66,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_mpinompinumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompinumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_mpinompinumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompinumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_mpinompinumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompinumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpinompinumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompinumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpinompinumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompinumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -94,24 +94,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_mpimpichnumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpimpichnumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_mpimpichnumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpimpichnumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_mpimpichnumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpimpichnumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mpimpichnumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpimpichnumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mpimpichnumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpimpichnumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -122,24 +122,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_mpinompinumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpinompinumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_mpinompinumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpinompinumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_mpinompinumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpinompinumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mpinompinumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpinompinumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mpinompinumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_mpinompinumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -150,24 +150,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_mpimpichnumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpimpichnumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_mpimpichnumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpimpichnumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_arm64_mpimpichnumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpimpichnumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpimpichnumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpimpichnumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpimpichnumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpimpichnumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -178,24 +178,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_mpinompinumpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpinompinumpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_mpinompinumpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpinompinumpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_arm64_mpinompinumpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpinompinumpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpinompinumpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpinompinumpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpinompinumpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_mpinompinumpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -206,24 +206,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_numpy1.20python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_numpy1.20python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.20python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>win_64_numpy1.21python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.21python3.10.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.21python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.21python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_numpy1.21python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3985&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/kwant-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.21python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
