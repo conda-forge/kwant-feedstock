@@ -31,7 +31,7 @@ mumps_mpi:
 mumps_seq:
 - 5.2.1
 numpy:
-- '1.21'
+- '1.22'
 openmpi:
 - '4'
 pin_run_as_build:
