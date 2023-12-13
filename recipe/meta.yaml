@@ -55,8 +55,8 @@ requirements:
     - libcblas
     - python
     - cython
-    - mumps-seq  # [not win and mpi == "nompi"]
-    - mumps-mpi  # [mpi != "nompi"]
+    - mumps-seq >= 5.6.1  # [not win and mpi == "nompi"]
+    - mumps-mpi >= 5.6.1  # [mpi != "nompi"]
     - {{ mpi }}   # [mpi != "nompi"]
     - mpi4py  # [mpi != "nompi"]
     - numpy
@@ -65,8 +65,8 @@ requirements:
     - tinyarray
   run:
     - python
-    - mumps-seq  # [not win and mpi == "nompi"]
-    - mumps-mpi  # [mpi != "nompi"]
+    - mumps-seq >= 5.6.1  # [not win and mpi == "nompi"]
+    - mumps-mpi >= 5.6.1  # [mpi != "nompi"]
     - {{ mpi }}  # [mpi != "nompi"]
     - mpi4py  # [mpi != "nompi"]
     - {{ pin_compatible('numpy') }}
