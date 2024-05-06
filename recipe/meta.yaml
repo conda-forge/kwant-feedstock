@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.4" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: {{ name }}
@@ -48,6 +48,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - setuptools
