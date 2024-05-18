@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.4.4" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 package:
   name: {{ name }}
@@ -70,7 +70,6 @@ requirements:
     - mumps-mpi  # [mpi != "nompi"]
     - {{ mpi }}  # [mpi != "nompi"]
     - mpi4py  # [mpi != "nompi"]
-    - {{ pin_compatible('numpy') }}
     - matplotlib-base
     - scipy
     - pytest
