@@ -17,7 +17,7 @@ source:
     # - schur-test.patch  # [osx]
 
 build:
-  skip: true  # [py2k]
+  skip: true  # [py<39 or python_impl == 'pypy']
   number: {{ build }}
   string: py{{ py }}h{{ PKG_HASH }}_{{ build }}
 
