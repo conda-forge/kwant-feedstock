@@ -10,7 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://test.pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
   sha256: a41e7b316f058c633dd22e02993d43e164e0a4d08a6afeec0224b587790d046b
-  # patches:
+  patches:
+    - raise_tolerance.patch  # [win]
     # - skip_tests.patch  # [win]
     # - skip_test_basis_ordering.patch
     # - skip_test_kpm_kwant_op.patch  # [win]
