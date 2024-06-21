@@ -1,7 +1,4 @@
 #!/bin/bash
-platform='unknown'
-unamestr=`uname`
-
 cp $RECIPE_DIR/build.conf build.conf
 
 sed -i -e "s:PREFIX:$PREFIX:g" build.conf
