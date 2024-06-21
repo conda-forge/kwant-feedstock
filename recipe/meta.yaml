@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
-{% set version = "1.4.4" %}
-{% set build = 4 %}
+{% set version = "1.5.0" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
@@ -8,37 +8,18 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
-  sha256: 6cf76cc09166714a46644a8127b82b386b1a8e76b8c836c95281f6f8be72ac30
-  patches:
-    - skip_tests.patch  # [win]
-    - skip_test_basis_ordering.patch
-    - skip_test_kpm_kwant_op.patch  # [win]
-    - schur-test.patch  # [osx]
-    - init_mpi.patch  # [mpi != "nompi"]
-
-# We set the build number of the `nompi` variant higher than
-# the `mpi` variant, such that the `nompi` will be preferred.
-{% if mpi == "nompi" %}
-{% set build = build + 100 %}
-{% endif %}
+  url: https://test.pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwant-{{ version }}.tar.gz
+  sha256: a41e7b316f058c633dd22e02993d43e164e0a4d08a6afeec0224b587790d046b
+  # patches:
+    # - skip_tests.patch  # [win]
+    # - skip_test_basis_ordering.patch
+    # - skip_test_kpm_kwant_op.patch  # [win]
+    # - schur-test.patch  # [osx]
 
 build:
   skip: true  # [py2k]
   number: {{ build }}
-  # add build string so packages can depend on
-  # mpi or nompi variants explicitly:
-  # `pkg * mpi_mpich_*` for mpich
-  # `pkg * mpi_*` for any mpi
-  # `pkg * nompi_*` for no mpi
-  {% if mpi != 'nompi' %}
-  {% set mpi_prefix = "mpi_" + mpi %}
-  {% else %}
-  {% set mpi_prefix = "nompi" %}
-  {% endif %}
-  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
-  run_exports:
-    - {{ name }} * {{ mpi_prefix }}_*  # [mpi != "nompi"]
+  string: py{{ py }}h{{ PKG_HASH }}_{{ build }}
 
 requirements:
   build:
@@ -56,20 +37,14 @@ requirements:
     - libcblas
     - python
     - cython
-    - mumps-seq  # [not win and mpi == "nompi"]
-    - mumps-mpi  # [mpi != "nompi"]
-    - {{ mpi }}   # [mpi != "nompi"]
-    - mpi4py  # [mpi != "nompi"]
+    - python-mumps
     - numpy
     - scipy
     - pytest
     - tinyarray
   run:
     - python
-    - mumps-seq  # [not win and mpi == "nompi"]
-    - mumps-mpi  # [mpi != "nompi"]
-    - {{ mpi }}  # [mpi != "nompi"]
-    - mpi4py  # [mpi != "nompi"]
+    - python-mumps
     - {{ pin_compatible('numpy') }}
     - matplotlib-base
     - scipy

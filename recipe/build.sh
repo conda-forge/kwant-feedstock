@@ -2,17 +2,7 @@
 platform='unknown'
 unamestr=`uname`
 
-if [[ "$mpi" != 'nompi' ]]; then
-   build_variant="mpi"
-else
-   build_variant="nompi"
-fi
-
-if [[ "$unamestr" == 'Darwin' ]]; then
-   cp $RECIPE_DIR/build_mac_$build_variant.conf build.conf
-else
-   cp $RECIPE_DIR/build_linux_$build_variant.conf build.conf
-fi
+cp $RECIPE_DIR/build.conf build.conf
 
 sed -i -e "s:PREFIX:$PREFIX:g" build.conf
 
