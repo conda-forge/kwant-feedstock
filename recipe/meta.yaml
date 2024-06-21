@@ -12,10 +12,6 @@ source:
   sha256: 9859451d0e20364ce30777a5dd7ecb7a06956822612935a408ed4d81e5c8321b
   patches:
     - raise_tolerance.patch  # [win]
-    # - skip_tests.patch  # [win]
-    # - skip_test_basis_ordering.patch
-    # - skip_test_kpm_kwant_op.patch  # [win]
-    # - schur-test.patch  # [osx]
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
