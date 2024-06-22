@@ -1,6 +1,3 @@
-# Ideally we would generate an OpenMPI build also, but the
-# build fails in that case (see #92).
+# Only supporting nompi because of python-mumps
 mpi:
-  - mpich  # [not win]
-  # - openmpi  # [not win]
   - nompi
