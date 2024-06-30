@@ -66,6 +66,12 @@ test:
     - kwant.solvers
     - kwant.solvers.tests
     - kwant.tests
+  commands:
+    - pip check
+    - python -c "import kwant; kwant.test()"
+  requires:
+    - pip
+    - pytest
 
 about:
   home: http://kwant-project.org/
