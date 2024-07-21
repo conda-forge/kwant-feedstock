@@ -22,7 +22,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
+    - cython !=3.0.10                        # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
@@ -33,7 +33,7 @@ requirements:
     - libblas
     - libcblas
     - python
-    - cython
+    - cython !=3.0.10
     - python-mumps
     - numpy
     - scipy
