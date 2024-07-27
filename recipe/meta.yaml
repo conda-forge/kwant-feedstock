@@ -45,7 +45,7 @@ requirements:
   run:
     - python
     - python-mumps
-    - matplotlib-base
+    - matplotlib-base <3.9.0
     - scipy
     - pytest
     - tinyarray
