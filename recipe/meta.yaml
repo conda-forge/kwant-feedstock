@@ -13,6 +13,7 @@ source:
   patches:
     - raise_tolerance.patch  # [win]
     - "skip-type-check.patch"
+    - "fix-scipy-compatibility.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
