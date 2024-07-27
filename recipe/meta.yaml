@@ -15,6 +15,7 @@ source:
     - "skip-type-check.patch"
     - "fix-scipy-compatibility.patch"
     - "skip-matplotlib-backend-test.patch"
+    - "fix-numpy-compatibility.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
