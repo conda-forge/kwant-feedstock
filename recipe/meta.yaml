@@ -54,6 +54,7 @@ requirements:
     - sympy
     - qsymm
     - vc 14  # [win]
+    - packaging
 
 test:
   imports:
