@@ -19,7 +19,7 @@ source:
     - "mpl-3.9.patch"
 
 build:
-  skip: true  # [py<39 or python_impl == 'pypy']
+  skip: true  # [py<39 or python_impl == 'pypy' or (win and py>=313)]
   number: {{ build }}
   string: py{{ py }}h{{ PKG_HASH }}_{{ build }}
 
