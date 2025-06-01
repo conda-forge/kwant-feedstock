@@ -42,6 +42,7 @@ requirements:
     - cython !=3.0.10
     - numpy
     - scipy
+    - mumps-seq
     - tinyarray
   run:
     - python
