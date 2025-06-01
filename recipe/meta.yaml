@@ -17,6 +17,7 @@ source:
     - "skip-matplotlib-backend-test.patch"
     - "fix-numpy-compatibility.patch"
     - "mpl-3.9.patch"
+    - "fix-numpy-math-cimport.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
