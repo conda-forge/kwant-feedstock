@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.5.0" %}
-{% set build = 5 %}
+{% set build = 6 %}
 
 package:
   name: {{ name }}
@@ -17,6 +17,7 @@ source:
     - "skip-matplotlib-backend-test.patch"
     - "fix-numpy-compatibility.patch"
     - "mpl-3.9.patch"
+    - "fix-numpy-math-cimport.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
@@ -39,10 +40,9 @@ requirements:
     - libcblas
     - python
     - cython !=3.0.10
-    - python-mumps
     - numpy
     - scipy
-    - pytest
+    - mumps-seq
     - tinyarray
   run:
     - python
