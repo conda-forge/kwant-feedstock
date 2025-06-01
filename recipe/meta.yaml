@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.5.0" %}
-{% set build = 5 %}
+{% set build = 6 %}
 
 package:
   name: {{ name }}
@@ -39,10 +39,8 @@ requirements:
     - libcblas
     - python
     - cython !=3.0.10
-    - python-mumps
     - numpy
     - scipy
-    - pytest
     - tinyarray
   run:
     - python
