@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.5.0" %}
-{% set build = 7 %}
+{% set build = 6 %}
 
 package:
   name: {{ name }}
@@ -30,17 +30,15 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython !=3.0.10                        # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - setuptools
-    - libblas
-    - libcblas
     - python
     - cython !=3.0.10
     - numpy
+    - scipy
     - tinyarray
   run:
     - python
