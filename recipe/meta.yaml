@@ -19,6 +19,7 @@ source:
     - "mpl-3.9.patch"
     - "fix-numpy-math-cimport.patch"
     - "disable-mumps.patch"
+    - "stop-using-deprecated-scipy-API.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
