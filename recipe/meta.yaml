@@ -18,6 +18,7 @@ source:
     - "fix-numpy-compatibility.patch"
     - "mpl-3.9.patch"
     - "fix-numpy-math-cimport.patch"
+    - "disable-mumps.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
