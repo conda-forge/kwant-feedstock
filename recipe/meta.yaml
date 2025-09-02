@@ -1,6 +1,6 @@
 {% set name = "kwant" %}
 {% set version = "1.5.0" %}
-{% set build = 6 %}
+{% set build = 7 %}
 
 package:
   name: {{ name }}
@@ -41,8 +41,6 @@ requirements:
     - python
     - cython !=3.0.10
     - numpy
-    - scipy
-    - mumps-seq
     - tinyarray
   run:
     - python
