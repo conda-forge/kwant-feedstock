@@ -1,0 +1,96 @@
+schema_version: 1
+
+context:
+  name: kwant
+  version: 1.5.0
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/kwant-${{ version }}.tar.gz
+  sha256: 9859451d0e20364ce30777a5dd7ecb7a06956822612935a408ed4d81e5c8321b
+  file_name: ${{ name }}-${{ version }}.tar.gz
+  patches:
+    - if: win
+      then: raise_tolerance.patch
+    - skip-type-check.patch
+    - fix-scipy-compatibility.patch
+    - skip-matplotlib-backend-test.patch
+    - fix-numpy-compatibility.patch
+    - mpl-3.9.patch
+    - fix-numpy-math-cimport.patch
+    - disable-mumps.patch
+    - stop-using-deprecated-scipy-API.patch
+
+build:
+  number: 10
+  skip: match(python, "<3.9") or python_impl == 'pypy'
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cython !=3.0.10
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+  host:
+    - setuptools
+    - python
+    - cython !=3.0.10
+    - numpy
+    - scipy
+    - tinyarray
+  run:
+    - python
+    - python-mumps
+    - matplotlib-base
+    - scipy
+    - pytest
+    - tinyarray
+    - sympy
+    - qsymm
+    - if: win or win
+      then: vc 14.*
+    - packaging
+
+tests:
+  - python:
+      imports:
+        - kwant
+        - kwant.graph
+        - kwant.graph.tests
+        - kwant.linalg
+        - kwant.linalg.tests
+        - kwant.physics
+        - kwant.physics.tests
+        - kwant.solvers
+        - kwant.solvers.tests
+        - kwant.tests
+
+about:
+  license: BSD-2-Clause
+  license_file: LICENSE.rst
+  summary: Package for numerical quantum transport calculations.
+  description: |
+    Kwant is a free (open source) Python package for numerical calculations on
+    tight-binding models with a strong focus on quantum transport. It is designed to
+    be flexible and easy to use. Thanks to the use of innovative algorithms, Kwant
+    is often faster than other available codes, even those entirely written in the
+    low level FORTRAN and C/C++ languages.
+  homepage: http://kwant-project.org/
+  repository: https://gitlab.kwant-project.org/kwant/kwant/
+  documentation: https://kwant-project.org/doc/1/
+
+extra:
+  recipe-maintainers:
+    - basnijholt
+    - jbweston
+    - akhmerov
