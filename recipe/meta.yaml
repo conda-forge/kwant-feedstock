@@ -19,10 +19,11 @@ source:
     - "fix-numpy-math-cimport.patch"
     - "disable-mumps.patch"
     - "stop-using-deprecated-scipy-API.patch"
+    - "fix-numpy-2.5-physics.patch"
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
-  number: 10
+  number: 11
 
 requirements:
   build:

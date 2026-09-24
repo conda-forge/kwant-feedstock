@@ -1,0 +1,28 @@
+--- a/kwant/physics/gauge.py
++++ b/kwant/physics/gauge.py
+@@ -86,7 +86,12 @@
+     for p1, p2 in zip(points, points[1:]):
+         v1 = p1 - origin
+         v2 = p2 - origin
+-        n = np.cross(v1, v2)
++        # NumPy 2.5 no longer accepts two-dimensional vectors in cross().
++        # In 2D the oriented area is the scalar determinant.
++        if v1.size == 2:
++            n = v1[0] * v2[1] - v1[1] * v2[0]
++        else:
++            n = np.cross(v1, v2)
+         integral += integrator(f, origin, v1, v2, n, tol)
+     return integral
+ 
+--- a/kwant/physics/dispersion.py
++++ b/kwant/physics/dispersion.py
+@@ -140,7 +140,8 @@
+         if derivative_order >= 2:  # compute curvatures
+             # ediff_{i,j} =  1 / (E_i - E_j) if i != j, else 0
+             ediff = energies.reshape((-1, 1)) - energies.reshape((1, -1))
+-            ediff = np.divide(1, ediff, where=(ediff != 0))
++            ediff = np.divide(1, ediff, out=np.zeros_like(ediff),
++                              where=(ediff != 0))
+             h2 = - (mat + mat.conjugate().transpose())
+             curvatures = np.sum(eigenvectors.conjugate() * (h2 @ eigenvectors)
+                                 - 2 * ediff * np.abs(ph1p)**2, axis=0).real
