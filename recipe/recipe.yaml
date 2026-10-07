@@ -11,7 +11,6 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/kwant-${{ version }}.tar.gz
   sha256: 9859451d0e20364ce30777a5dd7ecb7a06956822612935a408ed4d81e5c8321b
-  file_name: ${{ name }}-${{ version }}.tar.gz
   patches:
     - if: win
       then: raise_tolerance.patch
